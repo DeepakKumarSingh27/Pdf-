@@ -1,6 +1,6 @@
 # Deepak PDF Reader
 
-### 📥 [Download Windows .EXE Installer Here (Direct Link)](installer/Deepak_PDF_Reader_Installer.exe?raw=true)
+### 📥 [Download Windows .EXE Installer Here (Direct Link)](https://github.com/DeepakKumarSingh27/Pdf-/releases/latest/download/Deepak_PDF_Reader_Installer.exe)
 *Simply click the link above, run the `.exe` file, and enjoy the application!*
 
 ---
