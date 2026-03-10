@@ -1,5 +1,10 @@
 # Deepak PDF Reader
 
+### 📥 [Download Windows .EXE Installer Here (Direct Link)](installer/Deepak_PDF_Reader_Installer.exe?raw=true)
+*Simply click the link above, run the `.exe` file, and enjoy the application!*
+
+---
+
 A professional, feature-rich PDF Reader Desktop Application with a modern JavaFX UI. Built for Windows deployment.
 
 ## Core Features
