@@ -1,0 +1,127 @@
+/* light.css */
+.root {
+    -fx-base: #f3f3f3;
+    -fx-background-color: #f3f3f3;
+    -fx-text-fill: #333333;
+    -fx-font-family: 'Segoe UI', Inter, sans-serif;
+}
+
+.main-pane {
+    -fx-background-color: #f3f3f3;
+}
+
+.header-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0 0 1 0;
+}
+
+.menu-bar,
+.tool-bar {
+    -fx-background-color: transparent;
+}
+
+.btn-primary {
+    -fx-background-color: #007acc;
+    -fx-text-fill: white;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-font-weight: bold;
+    -fx-padding: 6 12 6 12;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #005a9e;
+}
+
+.btn-secondary {
+    -fx-background-color: #e1dfdd;
+    -fx-text-fill: #333333;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 6 12 6 12;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #c8c6c4;
+}
+
+.btn-theme {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.search-field {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #333333;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.sidebar {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0 1 0 0;
+}
+
+.sidebar-section {
+    -fx-background-color: #f9f9f9;
+    -fx-padding: 5;
+}
+
+.sidebar-header {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8;
+    -fx-text-fill: #666666;
+}
+
+.custom-list {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.custom-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333333;
+    -fx-padding: 8;
+}
+
+.custom-list .list-cell:filled:hover {
+    -fx-background-color: #e1dfdd;
+}
+
+.custom-list .list-cell:filled:selected {
+    -fx-background-color: #007acc;
+    -fx-text-fill: white;
+}
+
+.document-scroll-pane {
+    -fx-background-color: #e5e5e5;
+    -fx-fit-to-width: true;
+}
+
+.document-scroll-pane .viewport {
+    -fx-background-color: #e5e5e5;
+}
+
+.page-container {
+    -fx-background-color: #e5e5e5;
+    -fx-padding: 20;
+}
+
+.pdf-view {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+}
+
+.status-bar {
+    -fx-background-color: #106ebe;
+    -fx-padding: 4 15 4 15;
+}
+
+.status-text {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}

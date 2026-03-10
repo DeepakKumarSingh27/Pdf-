@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.deepak.pdfreader.PdfViewerController" styleClass="main-pane">
+    <top>
+        <VBox styleClass="header-box">
+            <MenuBar styleClass="menu-bar">
+                <menus>
+                    <Menu text="File">
+                        <items>
+                            <MenuItem text="Open..." onAction="#handleOpen" accelerator="Shortcut+O"/>
+                            <MenuItem text="Save As..." onAction="#handleSave"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Exit" onAction="#handleExit"/>
+                        </items>
+                    </Menu>
+                    <Menu text="View">
+                        <items>
+                            <MenuItem text="Next Page" onAction="#handleNextPage" accelerator="Right"/>
+                            <MenuItem text="Previous Page" onAction="#handlePrevPage" accelerator="Left"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Zoom In" onAction="#handleZoomIn" accelerator="Shortcut+EQUALS"/>
+                            <MenuItem text="Zoom Out" onAction="#handleZoomOut" accelerator="Shortcut+MINUS"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Next Document" onAction="#handleNextDocument" accelerator="Shortcut+PageDown"/>
+                            <MenuItem text="Previous Document" onAction="#handlePrevDocument" accelerator="Shortcut+PageUp"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Full Screen" onAction="#handleFullScreen" accelerator="F11"/>
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+            <ToolBar styleClass="tool-bar">
+                <items>
+                    <Button text="Open File" onAction="#handleOpen" styleClass="btn-primary"/>
+                    <Button text="Save" onAction="#handleSave" styleClass="btn-secondary"/>
+                    <Separator/>
+                    <Button text="⏪ Prev Doc" onAction="#handlePrevDocument" styleClass="btn-secondary"/>
+                    <Button text="Next Doc ⏩" onAction="#handleNextDocument" styleClass="btn-secondary"/>
+                    <Separator/>
+                    <Button text="◀ Prev" onAction="#handlePrevPage" styleClass="btn-secondary"/>
+                    <Button text="Next ▶" onAction="#handleNextPage" styleClass="btn-secondary"/>
+                    <Separator/>
+                    <Button text="➕ Zoom In" onAction="#handleZoomIn" styleClass="btn-secondary"/>
+                    <Button text="➖ Zoom Out" onAction="#handleZoomOut" styleClass="btn-secondary"/>
+                    <Separator/>
+                    <Button text="⛶ Full Screen" onAction="#handleFullScreen" styleClass="btn-secondary"/>
+                    <Separator/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <ToggleButton fx:id="themeToggle" text="☀️ Light Mode" onAction="#toggleTheme" styleClass="btn-theme"/>
+                </items>
+            </ToolBar>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true" styleClass="document-scroll-pane">
+            <StackPane fx:id="pageContainer" styleClass="page-container">
+                <ImageView fx:id="pdfImageView" preserveRatio="true" styleClass="pdf-view"/>
+            </StackPane>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="status-bar">
+            <Label fx:id="statusLabel" text="Ready" styleClass="status-text"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="pageLabel" text="Page: 0 / 0" styleClass="status-text"/>
+            <Label fx:id="zoomLabel" text="Zoom: 100%" styleClass="status-text"/>
+        </HBox>
+    </bottom>
+</BorderPane>

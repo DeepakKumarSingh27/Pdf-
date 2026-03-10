@@ -24,45 +24,37 @@
                             <SeparatorMenuItem/>
                             <MenuItem text="Zoom In" onAction="#handleZoomIn" accelerator="Shortcut+EQUALS"/>
                             <MenuItem text="Zoom Out" onAction="#handleZoomOut" accelerator="Shortcut+MINUS"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Next Document" onAction="#handleNextDocument" accelerator="Shortcut+PageDown"/>
+                            <MenuItem text="Previous Document" onAction="#handlePrevDocument" accelerator="Shortcut+PageUp"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Full Screen" onAction="#handleFullScreen" accelerator="F11"/>
                         </items>
                     </Menu>
                 </menus>
             </MenuBar>
             <ToolBar styleClass="tool-bar">
-                <Button text="Open File" onAction="#handleOpen" styleClass="btn-primary"/>
-                <Button text="Save" onAction="#handleSave" styleClass="btn-secondary"/>
-                <Separator/>
-                <Button text="◀ Prev" onAction="#handlePrevPage" styleClass="btn-secondary"/>
-                <Button text="Next ▶" onAction="#handleNextPage" styleClass="btn-secondary"/>
-                <Separator/>
-                <Button text="➕ Zoom In" onAction="#handleZoomIn" styleClass="btn-secondary"/>
-                <Button text="➖ Zoom Out" onAction="#handleZoomOut" styleClass="btn-secondary"/>
-                <Separator/>
-                <TextField fx:id="searchField" promptText="Search text..." onAction="#handleSearch" styleClass="search-field"/>
-                <Button text="Search" onAction="#handleSearch" styleClass="btn-secondary"/>
-                <Separator/>
-                <Button text="Highlight Mode" onAction="#handleHighlightMode" styleClass="btn-secondary"/>
-                <Separator/>
-                <Region HBox.hgrow="ALWAYS"/>
-                <ToggleButton fx:id="themeToggle" text="☀️ Light Mode" onAction="#toggleTheme" styleClass="btn-theme"/>
+                <items>
+                    <Button text="Open File" onAction="#handleOpen" styleClass="btn-primary"/>
+                    <Button text="Save" onAction="#handleSave" styleClass="btn-secondary"/>
+                    <Separator/>
+                    <Button text="⏪ Prev Doc" onAction="#handlePrevDocument" styleClass="btn-secondary"/>
+                    <Button text="Next Doc ⏩" onAction="#handleNextDocument" styleClass="btn-secondary"/>
+                    <Separator/>
+                    <Button text="◀ Prev" onAction="#handlePrevPage" styleClass="btn-secondary"/>
+                    <Button text="Next ▶" onAction="#handleNextPage" styleClass="btn-secondary"/>
+                    <Separator/>
+                    <Button text="➕ Zoom In" onAction="#handleZoomIn" styleClass="btn-secondary"/>
+                    <Button text="➖ Zoom Out" onAction="#handleZoomOut" styleClass="btn-secondary"/>
+                    <Separator/>
+                    <Button text="⛶ Full Screen" onAction="#handleFullScreen" styleClass="btn-secondary"/>
+                    <Separator/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <ToggleButton fx:id="themeToggle" text="☀️ Light Mode" onAction="#toggleTheme" styleClass="btn-theme"/>
+                </items>
             </ToolBar>
         </VBox>
     </top>
-
-    <left>
-        <SplitPane orientation="VERTICAL" prefWidth="260" styleClass="sidebar">
-            <items>
-                <VBox styleClass="sidebar-section">
-                    <Label text="Bookmarks" styleClass="sidebar-header"/>
-                    <ListView fx:id="bookmarkList" VBox.vgrow="ALWAYS" styleClass="custom-list"/>
-                </VBox>
-                <VBox styleClass="sidebar-section">
-                    <Label text="Search Results" styleClass="sidebar-header"/>
-                    <ListView fx:id="searchResultList" VBox.vgrow="ALWAYS" styleClass="custom-list"/>
-                </VBox>
-            </items>
-        </SplitPane>
-    </left>
 
     <center>
         <ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true" styleClass="document-scroll-pane">
