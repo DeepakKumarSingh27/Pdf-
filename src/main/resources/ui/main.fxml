@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.deepak.pdfreader.PdfViewerController" styleClass="main-pane">
+    <top>
+        <VBox styleClass="header-box">
+            <MenuBar styleClass="menu-bar">
+                <menus>
+                    <Menu text="File">
+                        <items>
+                            <MenuItem text="Open..." onAction="#handleOpen" accelerator="Shortcut+O"/>
+                            <MenuItem text="Save As..." onAction="#handleSave"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Exit" onAction="#handleExit"/>
+                        </items>
+                    </Menu>
+                    <Menu text="View">
+                        <items>
+                            <MenuItem text="Next Page" onAction="#handleNextPage" accelerator="Right"/>
+                            <MenuItem text="Previous Page" onAction="#handlePrevPage" accelerator="Left"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Zoom In" onAction="#handleZoomIn" accelerator="Shortcut+EQUALS"/>
+                            <MenuItem text="Zoom Out" onAction="#handleZoomOut" accelerator="Shortcut+MINUS"/>
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+            <ToolBar styleClass="tool-bar">
+                <Button text="Open File" onAction="#handleOpen" styleClass="btn-primary"/>
+                <Button text="Save" onAction="#handleSave" styleClass="btn-secondary"/>
+                <Separator/>
+                <Button text="◀ Prev" onAction="#handlePrevPage" styleClass="btn-secondary"/>
+                <Button text="Next ▶" onAction="#handleNextPage" styleClass="btn-secondary"/>
+                <Separator/>
+                <Button text="➕ Zoom In" onAction="#handleZoomIn" styleClass="btn-secondary"/>
+                <Button text="➖ Zoom Out" onAction="#handleZoomOut" styleClass="btn-secondary"/>
+                <Separator/>
+                <TextField fx:id="searchField" promptText="Search text..." onAction="#handleSearch" styleClass="search-field"/>
+                <Button text="Search" onAction="#handleSearch" styleClass="btn-secondary"/>
+                <Separator/>
+                <Button text="Highlight Mode" onAction="#handleHighlightMode" styleClass="btn-secondary"/>
+                <Separator/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <ToggleButton fx:id="themeToggle" text="☀️ Light Mode" onAction="#toggleTheme" styleClass="btn-theme"/>
+            </ToolBar>
+        </VBox>
+    </top>
+
+    <left>
+        <SplitPane orientation="VERTICAL" prefWidth="260" styleClass="sidebar">
+            <items>
+                <VBox styleClass="sidebar-section">
+                    <Label text="Bookmarks" styleClass="sidebar-header"/>
+                    <ListView fx:id="bookmarkList" VBox.vgrow="ALWAYS" styleClass="custom-list"/>
+                </VBox>
+                <VBox styleClass="sidebar-section">
+                    <Label text="Search Results" styleClass="sidebar-header"/>
+                    <ListView fx:id="searchResultList" VBox.vgrow="ALWAYS" styleClass="custom-list"/>
+                </VBox>
+            </items>
+        </SplitPane>
+    </left>
+
+    <center>
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true" styleClass="document-scroll-pane">
+            <StackPane fx:id="pageContainer" styleClass="page-container">
+                <ImageView fx:id="pdfImageView" preserveRatio="true" styleClass="pdf-view"/>
+            </StackPane>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="status-bar">
+            <Label fx:id="statusLabel" text="Ready" styleClass="status-text"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="pageLabel" text="Page: 0 / 0" styleClass="status-text"/>
+            <Label fx:id="zoomLabel" text="Zoom: 100%" styleClass="status-text"/>
+        </HBox>
+    </bottom>
+</BorderPane>
